@@ -1,12 +1,6 @@
 testing
 
 
-on: push
-jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
+git tag -a v0.0.2 -m "fixing tags"
 
+git push origin v0.0.2
