@@ -277,7 +277,7 @@ function skip()
 
 function draw_line
 {
-    printf '%*s\n' "${screen_width}" '' | tr ' ' -
+    printf ''  | tr ' ' -
 }
 
 # -------------------------------------------------------------------------------- #
