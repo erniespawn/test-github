@@ -334,7 +334,7 @@ class ServerWindow(QMainWindow):
 			time.sleep(.1)
 		self.server.close()
 		
-      def close_server(self):
+def close_server(self):
 		try:
 			self.thread_event.set()
 			self.server.shutdown(SHUT_RDWR)
