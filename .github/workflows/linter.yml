@@ -1,6 +1,7 @@
 ---
 name: yamllint
 "on": [push, pull_request]
+
 jobs:
   delivery:
     runs-on: ubuntu-latest
