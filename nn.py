@@ -1,22 +1,9 @@
-def scope_test():
-    def do_local():
-        spam = "local spam"
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
 
-    def do_nonlocal():
-        nonlocal spam
-        spam = "nonlocal spam"
+p1 = Person("John", 36)
 
-    def do_global():
-        global spam
-        spam = "global spam"
-
-    spam = "test spam"
-    do_local()
-    print("After local assignment:", spam)
-    do_nonlocal()
-    print("After nonlocal assignment:", spam)
-    do_global()
-    print("After global assignment:", spam)
-
-scope_test()
-print("In global scope:", spam)
+print(p1.name)
+print(p1.age)
