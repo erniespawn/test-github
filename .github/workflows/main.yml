@@ -6,12 +6,11 @@ on:
       - "*"
 
 jobs:
-  steps:
-      - name: Print the input name to STDOUT
-        run: echo The username is ${{ inputs.username }}
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Print the input name to STDOUT
+        run: echo The username is ${{ inputs.username }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Docker meta
