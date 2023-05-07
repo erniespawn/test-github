@@ -8,4 +8,4 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v3
         with:
-          yamllint_file_or_dir: '/website/'
+          yamllint_file_or_dir: 'website/index.html'
