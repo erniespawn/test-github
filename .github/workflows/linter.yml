@@ -1,11 +1,10 @@
-name: Yaml Lint
-on: [push]  # yamllint disable-line rule:truthy
+name: yamllint
+"on": [push, pull_request]
 jobs:
-  lintAllTheThings:
+  delivery:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          yamllint_file_or_dir: 'website/index.html'
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Run yamllint
+      uses: actionshub/yamllint@main
