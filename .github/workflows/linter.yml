@@ -1,17 +1,12 @@
----
-name: Lint
-
-# yamllint disable-line rule:truthy
 on: [push, pull_request]
 
 jobs:
-  prettier:
-    name: Prettier
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.5.2
-      - name: 🚀 Run Prettier
-        uses: creyD/prettier_action@v4.3
+      - name: Set up Ruby 3.0
+        uses: ruby/setup-ruby@v1
         with:
-          prettier_options: --write **/*.{json,js,md,yaml}
+          ruby-version: 3.0
+      - name: Run YAML-Lint
+        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)
